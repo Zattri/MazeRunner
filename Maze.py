@@ -59,11 +59,11 @@ class Maze:
 
     # Fill the border of the array with characters to represent walls
     def createWalls(self):
-        for y in range(self.height):
+        for y in range(1, self.height - 1):
             self.mazeArray[0][y] = "│"
             self.mazeArray[self.width - 1][y] = "│"
 
-        for x in range(self.width):
+        for x in range(1, self.width - 1):
             self.mazeArray[x][0] = "-"
             self.mazeArray[x][self.height - 1] = "-"
 
