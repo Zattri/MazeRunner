@@ -25,11 +25,9 @@ class Maze:
 
     # Set the start value to a given position
     def setStart(self, x, y):
-        # If a start already exists, remove it from the array
-        if (self.start != None):
-            self.mazeArray[self.start[0]][self.start[1]] = " "
-
         if (self.mazeArray[x][y] == " "):
+            if self.start:
+                self.mazeArray[self.start[0]][self.start[1]] = " "
             self.start = (x,y)
             self.mazeArray[x][y] = self.startChar
             return True
@@ -41,11 +39,9 @@ class Maze:
 
     # Set the finish value to a given position
     def setFinish(self, x, y):
-        # If a finish already exists, remove it from the array
-        if (self.finish != None):
-            self.mazeArray[self.finish[0]][self.finish[1]] = " "
-
         if (self.mazeArray[x][y] == " "):
+            if self.finish:
+                self.mazeArray[self.finish[0]][self.finish[1]] = " "
             self.finish = (x, y)
             self.mazeArray[x][y] = self.finishChar
             return True
