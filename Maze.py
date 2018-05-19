@@ -3,16 +3,22 @@ import math
 
 class Maze:
 
-    def __init__(self, x_size, y_size):
-        self.mazeArray = [[" " for y in range(y_size)] for x in range(x_size)]
-        self.width = x_size
-        self.height = y_size
+    def __init__(self, mazeWidth, mazeHeight):
+        self.mazeArray = [[" " for y in range(mazeHeight)] for x in range(mazeWidth)]
+        self.width = mazeWidth
+        self.height = mazeHeight
         self.start = None
         self.startChar = "S"
         self.finish = None
         self.finishChar = "F"
 
     # GETTER AND SETTER METHODS ---------------------------------------------------------------------------------------
+
+    def getWidth(self):
+        return self.width
+
+    def getHeight(self):
+        return self.height
 
     def getStart(self):
         return self.start
