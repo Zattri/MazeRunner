@@ -55,8 +55,8 @@ class Obstacle:
             latestCell = self.path[-1]
 
             #Debugging
-            # - print(self.path)
-            # - self.maze.printMaze()
+            print(self.path)
+            self.maze.printMaze()
 
             while True:
                 direction = random.randint(0,3)
@@ -68,7 +68,9 @@ class Obstacle:
                     newCell = (latestCell[0] + 1, latestCell[1])
                 elif direction == 3:  # Down
                     newCell = (latestCell[0], latestCell[1] + 1)
-                if (not self.checkNearWall(newCell)) & self.maze.checkEmpty(newCell): # Need to also check if an obstacle is touching another obstacle
+                if (not self.checkNearWall(newCell)) & self.maze.checkEmpty(newCell):
+                    # Need to make it so the new cell acts like a snake, and cannot have anything connecting around it other than the previous obstacle cell
+                    # Need to also check if an obstacle is touching another obstacle
                     self.addToPath(newCell)
                     self.maze.setCell(newCell[0], newCell[1], self.obstacleChar)
                     break

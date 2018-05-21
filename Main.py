@@ -4,9 +4,10 @@ def main():
     myMaze.createWalls()
     myMaze.createStart()
     myMaze.createFinish()
-    myObstacle = o.Obstacle(myMaze, 20, True)
+    myObstacle = o.Obstacle(myMaze, 20, False)
     myObstacle.generateObstacle()
     myMaze.printMaze()
     myObstacle.printPath()
+    print("Generation Complete")
 
 main()
