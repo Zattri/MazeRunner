@@ -1,9 +1,12 @@
 import Maze as m, Runner as r, Obstacle as o
 def main():
-    myMaze = m.Maze(10, 10)
+    myMaze = m.Maze(12, 12)
     myMaze.createWalls()
     myMaze.createStart()
     myMaze.createFinish()
+    myObstacle = o.Obstacle(myMaze, 20, True)
+    myObstacle.generateObstacle()
     myMaze.printMaze()
+    myObstacle.printPath()
 
 main()
